@@ -18,6 +18,16 @@ app.get("/", function (request, response) {
 
 //START OF YOUR CODE...
 
+// '/quotes' route
+app.get("/quotes", function (request, response) {
+  response.send(`Here are the quotes: ${JSON.stringify(quotes)}` )
+});
+
+// '/quotes/random' route
+app.get("/quotes/random", function (request, response) {
+  let chosenQuote = JSON.stringify(pickFromArray(quotes))
+  response.send(`Here is your random quote: ${(chosenQuote)}`)
+})
 //...END OF YOUR CODE
 
 //You can use this function to pick one element at random from a given array
